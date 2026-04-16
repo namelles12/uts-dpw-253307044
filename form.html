@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi Akun - SMKN Tunas Bangsa</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>SMKN Tunas Bangsa</h1>
+        <p>Pendaftaran Mandiri</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="alur.html">Alur Pendaftaran</a>
+        <a href="form.html">Registrasi Akun</a>
+    </nav>
+
+    <main>
+        <section class="form-section">
+            <h2 class="section-title" id="form-main-title">Tahap 1: Registrasi Akun</h2>
+
+            <div class="stepper-wrapper">
+                <div class="stepper-item active" id="indicator-1">
+                    <div class="step-counter">1</div>
+                    <div class="step-name">Registrasi</div>
+                </div>
+                <div class="stepper-item" id="indicator-2">
+                    <div class="step-counter">2</div>
+                    <div class="step-name">Biodata</div>
+                </div>
+                <div class="stepper-item" id="indicator-3">
+                    <div class="step-counter">3</div>
+                    <div class="step-name">Upload</div>
+                </div>
+                <div class="stepper-item" id="indicator-4">
+                    <div class="step-counter">4</div>
+                    <div class="step-name">Selesai</div>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <form id="ppdb-form">
+
+                    <div class="form-step active-step" id="step-1">
+                        <div class="form-group">
+                            <label for="regNama">Nama Terang</label>
+                            <input type="text" id="regNama" placeholder="Ketik nama panggilan / lengkap..."
+                                autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="regEmail">Alamat Email Aktif</label>
+                            <input type="email" id="regEmail" placeholder="contoh: nama@email.com" autocomplete="off">
+                            <small class="form-hint">Email ini akan digunakan untuk login sistem/alur
+                                selanjutnya.</small>
+                        </div>
+                        <div class="form-group form-actions">
+                            <button type="button" class="btn-primary" onclick="goToStep(2)">Lanjut ke Isi
+                                Formulir</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step hidden" id="step-2">
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label for="bioNama">Nama Lengkap Sesuai Dokumen Resmi</label>
+                                <input type="text" id="bioNama" placeholder="Ketik nama lengkap panjang...">
+                            </div>
+                            <div class="form-group">
+                                <label for="bioAsalSekolah">Asal Sekolah</label>
+                                <input type="text" id="bioAsalSekolah" placeholder="Contoh: SMPN 1 Madiun">
+                            </div>
+                            <div class="form-group">
+                                <label for="bioNisn">Nomor Induk Siswa Nasional (NISN)</label>
+                                <input type="number" id="bioNisn" placeholder="Ketik 10 digit NISN...">
+                            </div>
+                            <div class="form-group">
+                                <label for="bioTempatLahir">Tempat Lahir</label>
+                                <input type="text" id="bioTempatLahir" placeholder="Kota/Kabupaten kelahiran...">
+                            </div>
+                            <div class="form-group">
+                                <label for="bioTanggalLahir">Tanggal & Tahun Lahir</label>
+                                <input type="date" id="bioTanggalLahir">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bioAyah">Nama Ayah</label>
+                                <input type="text" id="bioAyah" placeholder="Nama lengkap ayah...">
+                            </div>
+                            <div class="form-group">
+                                <label for="bioIbu">Nama Ibu</label>
+                                <input type="text" id="bioIbu" placeholder="Nama lengkap ibu...">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="bioAnakKe">Anak Ke- (Berapa)</label>
+                                <input type="number" id="bioAnakKe" placeholder="Contoh: 1">
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="bioJalan">Lokasi Rumah (Jalan / RT / RW)</label>
+                                <input type="text" id="bioJalan" placeholder="Contoh: Jl. Pahlawan No. 10">
+                            </div>
+                            <div class="form-group">
+                                <label for="bioKecamatan">Kecamatan</label>
+                                <input type="text" id="bioKecamatan" placeholder="Nama kecamatan...">
+                            </div>
+                            <div class="form-group">
+                                <label for="bioKota">Kota / Kabupaten</label>
+                                <input type="text" id="bioKota" placeholder="Kota / Kab...">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="bioProvinsi">Provinsi</label>
+                                <input type="text" id="bioProvinsi" placeholder="Provinsi...">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-actions action-split">
+                            <button type="button" class="btn-secondary" onclick="goToStep(1)">Mundur Berubah
+                                Pikiran</button>
+                            <button type="button" class="btn-primary" onclick="goToStep(3)">Lanjut ke Upload
+                                Berkas</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step hidden" id="step-3">
+                        <div class="upload-container">
+                            <div class="form-group">
+                                <label for="fileKesehatan">Surat Cek Kesehatan Bebas Buta Warna</label>
+                                <input type="file" id="fileKesehatan" accept="image/*,.pdf">
+                            </div>
+                            <div class="form-group">
+                                <label for="fileIjazah">Scan Ijazah Sekolah Menengah Pertama</label>
+                                <input type="file" id="fileIjazah" accept="image/*,.pdf">
+                            </div>
+                            <div class="form-group">
+                                <label for="filePiagam">Sertifikat / Piagam (Opsional)</label>
+                                <input type="file" id="filePiagam" accept="image/*,.pdf">
+                                <small class="form-hint">Bersifat opsional, lampirkan jika Anda pernah meraih juara
+                                    berprestasi.</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-actions action-split">
+                            <button type="button" class="btn-secondary" onclick="goToStep(2)">Periksa Tabel Biodata
+                                Terlebih Dahulu</button>
+                            <button type="button" class="btn-primary" onclick="submitAkhir()">Kirim Berkas & Selesaikan
+                                Misi</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step hidden" id="step-4">
+                        <div class="success-container">
+                            <div class="success-icon">✔️</div>
+                            <h3>Pendaftaran Berhasil!</h3>
+                            <p>Data biodata beserta berkas pendaftaran Anda telah terekam secara revolusioner di sistem
+                                cloud kami.</p>
+                            <div class="status-box">
+                                <strong>Status Saat Ini:</strong> <span class="status-badge">Menunggu Verifikasi
+                                    Admin</span>
+                            </div>
+                            <p class="success-desc">Misi verifikasi admin SMKN 5 Kota Madiun sedang menganalisa
+                                kelengkapan berkas Anda. Silakan pantau laporan masuk secara berkala.</p>
+                        </div>
+
+                        <div class="form-group form-actions action-split" style="margin-top:2rem;">
+                            <button type="button" class="btn-primary" onclick="window.location.reload()">Kirim Angkatan
+                                Baru Berikutnya</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SMKN Tunas Bangsa. Mengabdi untuk Bangsa dan Tanah Air.</p>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
